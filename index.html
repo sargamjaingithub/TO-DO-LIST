@@ -10,13 +10,16 @@
   particlesJS("particles-js", {
     particles: {
       number: { value: 100 },
-      shape: { type: "circle" },
+      shape: { type: "circle" },  
       opacity: { value: 0.5 },
       size: { value: 3 },
       move: { speed: 2 },
     },
   });
 </script>
+<audio id="completeSound" src="adio.mp3"></audio>
+
+
 
 </head>
 <body>
@@ -26,6 +29,7 @@
         <div class="input1">
             <input type="text" id="inputid" placeholder="Add new task">
             <div id="particles-js"></div>
+
 
             <select id="order">
                 <option value="High">High</option>
@@ -38,6 +42,12 @@
         </div>
 
         <ul id="list"></ul>
+        <!-- Task List -->
+<ul id="list"></ul>
+
+<!-- Task Completion Message -->
+<div id="completionMessage" style="display: none; font-size: 20px; color: limegreen; font-weight: bold; text-align: center; margin-top: 20px;"></div>
+
     </div>
 
     <script src="script.js"></script>

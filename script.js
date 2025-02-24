@@ -1,8 +1,8 @@
 let tasks = [];
 let deletedTask = null;
 
-// Load Sound Effect
-const completeSound = new Audio("sounds.mp3");
+// Select the audio element from HTML
+const completeSound = document.getElementById("completeSound");
 
 // Event Listeners
 document.getElementById("ADD").addEventListener("click", addTask);
@@ -44,12 +44,7 @@ function renderTasks() {
     });
 }
 
-// Mark Task as Completed
-function markComplete(index) {
-    tasks[index].completed = !tasks[index].completed; // Toggle completion
-    completeSound.play(); // Play sound effect
-    renderTasks();
-}
+
 
 // Delete Task
 function deleteTask(index) {
@@ -65,6 +60,29 @@ function undoDelete() {
         renderTasks();
     }
 }
+function markComplete(index) {
+    tasks[index].completed = !tasks[index].completed; // Toggle completion
+
+    // Check if audio exists before playing
+    if (completeSound) {
+        completeSound.currentTime = 0; // Reset audio to start
+        completeSound.play().catch(error => console.log("Audio Play Error:", error));
+    }
+
+    // Display completion message
+    const messageDiv = document.getElementById("completionMessage");
+    messageDiv.textContent = "🎉 THE TASK IS COMPLETED! ✅"; // Set message text
+    messageDiv.style.display = "block"; // Show the message
+
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+        messageDiv.style.display = "none";
+    }, 3000);
+
+    renderTasks();
+}
+
+
 
 // Keyboard Shortcuts
 function handleShortcuts(event) {
@@ -79,3 +97,4 @@ function handleShortcuts(event) {
         event.preventDefault();
     }
 }
+//okaydone
