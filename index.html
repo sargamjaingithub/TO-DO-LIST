@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 100 },
+      shape: { type: "circle" },
+      opacity: { value: 0.5 },
+      size: { value: 3 },
+      move: { speed: 2 },
+    },
+  });
+</script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>TO-DO LIST</h1>
+
+        <div class="input1">
+            <input type="text" id="inputid" placeholder="Add new task">
+            <div id="particles-js"></div>
+
+            <select id="order">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            
+            <button id="ADD">Add</button>
+            <button id="undobtn"><i class="fa-solid fa-rotate-left"></i> Undo</button>
+        </div>
+
+        <ul id="list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

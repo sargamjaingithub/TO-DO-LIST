@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@keyframes gradientMove {
+   0% { background-position: 0% 50%; }
+   50% { background-position: 100% 50%; }
+   100% { background-position: 0% 50%; }
+}
+body {
+   position: relative;
+   overflow: hidden;
+   display: grid;
+   place-items: center; /* Centers the container */
+   height: 100vh;
+   margin: 0;
+}
+
+body::before {
+   content: "";
+   position: fixed;
+   top: 0;
+   left: 0;
+   justify-content:center;
+   align-items:center;
+   margin:0;
+   display:grid;
+   place-items:center;
+
+   width: 100%;
+   height: 100%;
+   background: url("https://media2.giphy.com/media/l3q2RgN7WUjeUUXm0/giphy.webp?cid=ecf05e47wy7gt7atfp8f8hwx1pyfcz14reh4jqtppi6iihqf&ep=v1_gifs_related&rid=giphy.webp&ct=g") 
+   no-repeat center center fixed;
+   background-size: cover;
+   z-index: -2;
+}
+
+
+
+
+.container {
+   background: linear-gradient(135deg, rgba(173, 216, 230, 0.6), rgba(0, 0, 139, 0.8));
+    margin:80px;
+    border-radius: 50px 0;
+      /* Semi-transparent dark background */
+      text-align: center;
+      padding: 50px;
+      width: 50%;
+      border-radius: 50px 0;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  
+      /* Centering */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  
+
+h1 {
+   font-size: 45px;
+   font-weight: bold;
+   padding: 30px;
+   letter-spacing: 3px;
+   text-align: center;
+   color: lavender;
+   transition: transform 0.3s ease-in-out;
+
+   /* Animation */
+   animation: spacingEffect 1s infinite alternate;
+}
+
+/* On Hover, Make it Grow */
+h1:hover {
+   transform: scale(1.1);
+   color: cyan;
+   text-shadow: 0 0 20px purple;
+}
+
+
+
+@keyframes spacingEffect {
+    from { letter-spacing: 2px; }
+    to { letter-spacing: 10px; }
+}
+
+/* Input & Buttons in Row */
+.input1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    color:black;
+}
+
+/* Input Field */
+#inputid {
+    color: black;
+    border-radius: 10px;
+    background-color: rgb(193, 160, 193);
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+#inputid:hover {
+   background-color: rgb(193, 160, 193);
+}
+
+/* Priority Dropdown */
+#order {
+   background: linear-gradient(135deg, cyan, purple);
+    color:black;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    font-weight: 50px;
+}
+#order:hover{
+   background: linear-gradient(135deg, purple, cyan);
+}
+
+/* Add & Undo Buttons */
+#ADD, #undobtn {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Add Button */
+#ADD {
+    background: linear-gradient(135deg, deepskyblue, navy);
+    color: white;
+}
+
+#ADD:hover {
+    background: linear-gradient(135deg, navy, deepskyblue);
+}
+
+/* Undo Button */
+#undobtn {
+    background: linear-gradient(135deg, cyan, purple);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#undobtn:hover {
+    background: linear-gradient(135deg, purple, cyan);
+    transform: scale(1.05);
+}
+
+/* Task List */
+#list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Task Items */
+#list li {
+    background: rgb(93, 67, 93);
+    color: white;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px 0px;
+}
+
+/* Delete Button */
+#list li button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#list li button:hover {
+    background: darkred;
+}
+/* Complete Button */
+#list li .complete-btn {
+   background: green;
+   color: white;
+   border: none;
+   padding: 8px 12px;
+   font-size: 14px;
+   cursor: pointer;
+   border-radius: 5px;
+   transition: 0.3s;
+   margin-right: 10px; /* Space before delete button */
+}
+
+/* Hover Effect for Complete Button */
+#list li .complete-btn:hover {
+   background: darkgreen;
+}
